@@ -1,0 +1,22 @@
+{
+  "name": "dhaatu",
+  "main": "index.js",
+  "version": "0.0.0",
+  "authors": [
+    "Prashant Tiwari <prashaantt@gmail.com>"
+  ],
+  "moduleType": [
+    "es6"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.6"
+  }
+}
