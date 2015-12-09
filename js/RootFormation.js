@@ -117,7 +117,7 @@ export default class RootFormation extends React.Component {
         this.state.lastSequenceLength = this.state.sequence.length;
 
         return (
-            <Paper className="row">
+            <Paper className="row" style={ { paddingTop: 50 } }>
                 <SoundMap data={ filteredRoots } sequence={ this.state.sequence } handleClick={ this.handleClick.bind(this) } />
                 <SequenceTracker sequence={ this.state.sequence } handleChange={ this.handleChange.bind(this) } />
                 <Roots filteredRoots={ filteredRoots } completedRoots={ this.state.completedRoots } />

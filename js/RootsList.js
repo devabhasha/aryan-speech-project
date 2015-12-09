@@ -4,11 +4,11 @@ import ListItem from 'material-ui/lib/lists/list-item';
 import MaterialColors from 'material-ui/lib/styles/colors';
 import Paper from 'material-ui/lib/paper';
 import React from 'react';
-import { SelectableContainerEnhance } from 'material-ui/lib/hoc/selectable-enhance';
-import startsWith from 'lodash/string/startsWith';
 import Tab from 'material-ui/lib/tabs/tab';
 import Tabs from 'material-ui/lib/tabs/tabs';
 import TextField from 'material-ui/lib/text-field';
+import { SelectableContainerEnhance } from 'material-ui/lib/hoc/selectable-enhance';
+import startsWith from 'lodash/string/startsWith';
 
 import '../scripts/sanscript';
 
