@@ -6,6 +6,7 @@ import Sound from './Sound';
 import '../scripts/sanscript';
 
 export default class SoundMap extends React.Component {
+
     // return Sounds for a given sound type, beginning with a filtered list of possible roots
     getSoundsForType(type, list) {
 
@@ -23,7 +24,7 @@ export default class SoundMap extends React.Component {
 
             if (!soundInList) {
                 soundProps.disabled = true;
-                soundProps.count = 0
+                soundProps.count = 0;
             }
             else {
                 soundProps.disabled = false;

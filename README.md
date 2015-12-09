@@ -8,6 +8,7 @@ Assuming the latest version of Node (with npm) is installed:
 
 1. `npm install`
 2. `bower install`
-3. `http-server .`
+3. `webpack`
+4. `http-server .`
 
 The core data server is written in Node and will shortly be made available separately in its own repository.

@@ -1,6 +1,3 @@
-import Card from 'material-ui/lib/card/card';
-import CardTitle from 'material-ui/lib/card/card-title';
-import CardText from 'material-ui/lib/card/card-text';
 import Classnames from 'classnames';
 import MaterialColors from 'material-ui/lib/styles/colors';
 import Paper from 'material-ui/lib/paper';
@@ -11,6 +8,7 @@ import soundMappings from '../data/sound-mappings';
 import '../scripts/sanscript';
 
 export default class Sound extends React.Component {
+
     constructor(props) {
 
         super(props);
@@ -111,26 +109,6 @@ export default class Sound extends React.Component {
 
     render() {
 
-        // const self = this;
-
-        // let a = <Paper
-        //             zDepth={ this.props.properties.disabled == true ? 0 : 2 }
-        //             className={ Classnames(this.props.properties.disabled == true ? 'disabled' : '', this.props.properties.sound, 'col-xs-1 sound') }
-        //             onClick={ this.props.properties.disabled == true ? undefined : this.handleClick.bind(this, 'pop') }
-        //             onMouseEnter={ this.hoverIn.bind(this, 'pop') }
-        //             onMouseLeave={ this.hoverOut.bind(this, 'pop') }
-        //             onMouseDown={ this.handleMouseDown.bind(this) }
-        //             onMouseUp={ this.handleMouseUp.bind(this) }
-        //             // ref={ this.props.properties.sound }
-        //             style={ { backgroundColor: (this.props.properties.disabled == true ? MaterialColors.blueGrey50 : MaterialColors.yellow50) } }>
-        //             <div dangerouslySetInnerHTML={ this.sound() } />
-        //         </Paper>
-        // let b = <Card
-        //             className={ Classnames(this.props.properties.disabled == true ? 'disabled' : '', this.props.properties.sound, 'col-xs-1 sound') }
-        //         ><CardTitle>{this.props.properties.sound}</CardTitle><CardText>{this.props.properties.count}</CardText></Card>
-        
-        // delete this.props.properties.disabled;
-
         let soundProperties = Object.keys(soundMappings).map(function (prop) {
 
             if (prop === 'disabled' || prop === 'subtype' && this.props.properties[prop] == undefined) {
@@ -147,8 +125,6 @@ export default class Sound extends React.Component {
                 </p>
             );
         }, this);
-
-        // console.log(this.props.properties)
 
         if (this.props.properties.sense) {
             soundProperties.push(

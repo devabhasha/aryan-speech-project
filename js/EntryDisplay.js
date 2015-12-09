@@ -1,6 +1,3 @@
-import Card from 'material-ui/lib/card/card';
-import CardTitle from 'material-ui/lib/card/card-title';
-import CardText from 'material-ui/lib/card/card-text';
 import React from 'react';
 
 import '../scripts/sanscript';
