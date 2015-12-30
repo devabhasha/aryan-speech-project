@@ -10,7 +10,7 @@ import TextField from 'material-ui/lib/text-field';
 import { SelectableContainerEnhance } from 'material-ui/lib/hoc/selectable-enhance';
 import startsWith from 'lodash/string/startsWith';
 
-import '../scripts/sanscript';
+import Sanscript from '../scripts/sanscript';
 
 const SelectableList = SelectableContainerEnhance(List);
 
@@ -25,7 +25,7 @@ export default class RootsList extends React.Component {
             selectedCompletedRootIndex: -1,
             filteredRoots: props.filteredRoots,
             completedRoots: props.completedRoots
-        }
+        };
     }
 
     translit(text) {
@@ -39,7 +39,7 @@ export default class RootsList extends React.Component {
 
         let roman, text;
 
-        if (textField.getValue().length == 1) {
+        if (textField.getValue().length === 1) {
             roman = textField.getValue();
         }
 
@@ -49,7 +49,7 @@ export default class RootsList extends React.Component {
         
         let matchingRoots;
 
-        if (textField.getValue() != '') {
+        if (textField.getValue() !== '') {
             matchingRoots = this.props.filteredRoots.filter(entry => startsWith(entry.root, text));
         }
         else {

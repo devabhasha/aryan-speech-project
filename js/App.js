@@ -13,7 +13,7 @@ export default class App extends React.Component {
                 linkButton={true}
                 label="About"
             />
-        )
+        );
 
         return (
             <div>

@@ -415,7 +415,7 @@ const data = [
         display: 'a.m',
         type: 4,
         alt: ['.m', '.n']
-    },
+    }
 ];
 
 module.exports.data = data;

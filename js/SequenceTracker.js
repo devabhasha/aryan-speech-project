@@ -3,7 +3,7 @@ import FlatButton from 'material-ui/lib/flat-button';
 import React from 'react';
 import TextField from 'material-ui/lib/text-field';
 
-import '../scripts/sanscript';
+import Sanscript from '../scripts/sanscript';
 
 export default class SequenceTracker extends React.Component {
 

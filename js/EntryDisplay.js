@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../scripts/sanscript';
+import Sanscript from '../scripts/sanscript';
 
 export default class EntryDisplay extends React.Component {
 

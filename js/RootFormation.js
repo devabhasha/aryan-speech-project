@@ -34,7 +34,7 @@ export default class RootFormation extends React.Component {
 
             this.setState({
                 rootsData: res.body.data
-            })
+            });
         });
     }
 

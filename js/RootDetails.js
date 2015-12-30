@@ -4,8 +4,8 @@ import request from 'superagent';
 
 import EntryDisplay from './EntryDisplay';
 import PrefixSelector from './PrefixSelector';
+import Sanscript from '../scripts/sanscript';
 import prefixes from '../data/prefixes';
-import '../scripts/sanscript';
 
 const endpoint = 'http://localhost:4000/api/entrySearch?q=';
 
@@ -46,7 +46,7 @@ export default class About extends React.Component {
                         payload: isRootPrefix ? isRootPrefix.id + '-' + prefix.form : '0',
                         text: this.translit(prefix.form),
                         disabled: !isRootPrefix
-                     }
+                    };
                 });
             }
 
@@ -64,7 +64,7 @@ export default class About extends React.Component {
 
     handleChange(e, i, item) {
 
-        let [ id, value ] = item.payload.split('-');
+        let [id, value] = item.payload.split('-');
 
         this.setState({
             selectedEntry: this.state.roots.find(root => root._id === id),

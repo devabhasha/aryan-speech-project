@@ -4,8 +4,8 @@ import Paper from 'material-ui/lib/paper';
 import Popover from 'material-ui/lib/popover/popover';
 import React from 'react';
 
+import Sanscript from '../scripts/sanscript';
 import soundMappings from '../data/sound-mappings';
-import '../scripts/sanscript';
 
 export default class Sound extends React.Component {
 
@@ -15,13 +15,13 @@ export default class Sound extends React.Component {
         this.state = {
             anchorOrigin: { vertical: 'middle', horizontal: 'center' },
             targetOrigin: { vertical: 'middle', horizontal: 'left' }
-        }
+        };
     }
 
     // transliterate itrans to devanagari
 
     transliterate(text) {
-        
+
         return Sanscript.t(text, 'itrans', 'devanagari');
     }
 
@@ -30,7 +30,7 @@ export default class Sound extends React.Component {
     sound() {
 
         // return { __html: this.props.properties.sound != undefined ? `<span class='name'>${this.getDisplaySound()}</span><span class='small'>(${this.props.properties.count})</span>` : `<span class='name'>&nbsp;</span>` };
-        return { __html: this.props.properties.sound != undefined ? `<span class='name'>${this.getDisplaySound()}</span>` + (this.props.properties.count ? ` <sup style='font-size: 80%'>(${this.props.properties.count})</sup>` : '') : `<span class='name'>&nbsp;</span>` };
+        return { __html: this.props.properties.sound !== undefined ? `<span class='name'>${this.getDisplaySound()}</span>` + (this.props.properties.count ? ` <sup style='font-size: 80%'>(${this.props.properties.count})</sup>` : '') : `<span class='name'>&nbsp;</span>` };
     }
 
     // display the alternative sound name if it exists
@@ -96,14 +96,14 @@ export default class Sound extends React.Component {
         }
     }
 
-    setAnchor(positionElement, position, e) {
+    setAnchor(positionElement, position) {
 
       let { anchorOrigin } = this.state;
       // var anchorOrigin = this.state.anchorOrigin
       anchorOrigin[positionElement] = position;
 
       this.setState({
-          anchorOrigin: anchorOrigin,
+          anchorOrigin: anchorOrigin
       });
     }
 
@@ -111,7 +111,7 @@ export default class Sound extends React.Component {
 
         let soundProperties = Object.keys(soundMappings).map(function (prop) {
 
-            if (prop === 'disabled' || prop === 'subtype' && this.props.properties[prop] == undefined) {
+            if (prop === 'disabled' || prop === 'subtype' && this.props.properties[prop] === undefined) {
                 return;
             }
 
@@ -138,15 +138,15 @@ export default class Sound extends React.Component {
         return (
             <div>
                 <Paper
-                    zDepth={ this.props.properties.disabled == true ? 0 : 2 }
-                    className={ Classnames(this.props.properties.disabled == true ? 'disabled' : '', this.props.properties.sound, 'col-xs-1 sound') }
-                    onClick={ this.props.properties.disabled == true ? undefined : this.handleClick.bind(this, 'pop') }
+                    zDepth={ this.props.properties.disabled === true ? 0 : 2 }
+                    className={ Classnames(this.props.properties.disabled === true ? 'disabled' : '', this.props.properties.sound, 'col-xs-1 sound') }
+                    onClick={ this.props.properties.disabled === true ? undefined : this.handleClick.bind(this, 'pop') }
                     onMouseEnter={ this.hoverIn.bind(this, 'pop') }
                     onMouseLeave={ this.hoverOut.bind(this, 'pop') }
                     onMouseDown={ this.handleMouseDown.bind(this) }
                     onMouseUp={ this.handleMouseUp.bind(this) }
                     // ref={ this.props.properties.sound }
-                    style={ { backgroundColor: (this.props.properties.disabled == true ? MaterialColors.blueGrey50 : MaterialColors.yellow50) } }>
+                    style={ { backgroundColor: (this.props.properties.disabled === true ? MaterialColors.blueGrey50 : MaterialColors.yellow50) } }>
                     <div dangerouslySetInnerHTML={ this.sound() } />
                 </Paper>
                 <Popover open={ this.state.activePopover === 'pop' }
@@ -161,7 +161,7 @@ export default class Sound extends React.Component {
                     onRequestClose={ this.closePopover.bind(this, 'pop') }>
                     <div className='popover'>
                         <p className='title'>
-                            { this.props.properties.sound != undefined ? this.getDisplaySound() : '' }
+                            { this.props.properties.sound !== undefined ? this.getDisplaySound() : '' }
                         </p>
                         { soundProperties }
                     </div>
@@ -173,4 +173,4 @@ export default class Sound extends React.Component {
 
 Sound.propTypes = {
     properties: React.PropTypes.object.isRequired
-}
+};

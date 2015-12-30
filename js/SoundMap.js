@@ -3,7 +3,6 @@ import React from 'react';
 
 import sounds from '../data/sounds';
 import Sound from './Sound';
-import '../scripts/sanscript';
 
 export default class SoundMap extends React.Component {
 

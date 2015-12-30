@@ -1,8 +1,12 @@
 import React from 'react';
+const react = require('react');
 
 export default class About extends React.Component {
 
     render() {
+
+        console.log(react.toString());
+
         return (
             <div>
                 <h1>The Aryan Speech Project</h1>

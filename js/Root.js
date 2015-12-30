@@ -4,7 +4,7 @@ import CardText from 'material-ui/lib/card/card-text';
 import React from 'react';
 import { Link } from 'react-router';
 
-import '../scripts/sanscript';
+import Sanscript from '../scripts/sanscript';
 
 export default class Root extends React.Component {
 
@@ -21,7 +21,7 @@ export default class Root extends React.Component {
 
         const numSenses = this.props.selectedRoot.senses.length;
 
-        let senses = this.props.selectedRoot.senses.map(sense => <li>{ sense }</li>)
+        let senses = this.props.selectedRoot.senses.map(sense => <li>{ sense }</li>);
 
         let derivativesList;
 
@@ -64,4 +64,4 @@ export default class Root extends React.Component {
             </div>
         );
     }
-};
+}

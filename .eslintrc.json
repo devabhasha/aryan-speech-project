@@ -1,0 +1,14 @@
+{
+    "extends": "hapi",
+    "ecmaFeatures": {
+        "blockBindings": true,
+        "classes": true,
+        "defaultParams": true,
+        "destructuring": true,
+        "jsx": true,
+        "modules": true        
+    },
+    "env": {
+        "browser": true
+    }
+}
